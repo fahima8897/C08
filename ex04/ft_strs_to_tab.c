@@ -1,20 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fboumell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/30 09:47:33 by fboumell          #+#    #+#             */
+/*   Updated: 2021/03/30 11:27:40 by fboumell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include "ft_stock_str.h"
 
-int	ft_strlen(char *str)
+int						ft_strlen(char *str)
 {
 	int i;
-	
+
 	i = 0;
 	while (str[i] != '\0')
 		i++;
 	return (i);
 }
 
-char	*ft_strdup(char *str)
+char					*ft_strdup(char *str)
 {
-	int i;
-	char *copied;
+	int		i;
+	char	*copied;
 
 	i = 0;
 	if (!(copied = (char*)malloc(sizeof(char) * (ft_strlen(src) + 1))))
@@ -28,10 +40,10 @@ char	*ft_strdup(char *str)
 	return (copied);
 }
 
-struct s_stock_str *ft_strs_to_tab(int ac, char **av)
+struct	s_stock_str		*ft_strs_to_tab(int ac, char **av)
 {
-	int i;
-	struct s_stock_str *tab;
+	int					i;
+	struct s_stock_str	*tab;
 
 	i = 0;
 	tab = (struct s_stock_str*)malloc(sizeof(struct s_stock_str) * (ac + 1));
